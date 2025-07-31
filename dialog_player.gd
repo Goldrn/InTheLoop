@@ -52,6 +52,7 @@ func finish():
 	background.visible = false
 	in_progress = false
 	can_click = false
+	SignalBus.emit_signal("current_dialog_finished")
 	get_tree().paused = false
 
 func on_display_dialog(text_key):

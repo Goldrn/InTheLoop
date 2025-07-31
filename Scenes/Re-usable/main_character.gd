@@ -14,6 +14,7 @@ var target_area_key = ""
 var is_in_correct_area = false
 var should_continue_dialogue = true
 
+
 @onready var sprite = $main_character_sprite
 @onready var dialogue_area = $dialogue_area
 
@@ -22,10 +23,7 @@ func _ready() -> void:
 	target_pos = self.position
 	y_level = self.position.y
 	SignalBus.start_move.connect(set_target_pos)
-
-#func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("Left_click"):
-		#target_pos = view_to_world * get_viewport().get_mouse_position()
+	
 		
 		
 func  _process(delta: float) -> void:
@@ -52,3 +50,4 @@ func _on_dialogue_area_area_entered(area: Area2D) -> void:
 		
 func _on_dialogue_area_area_exited(area: Area2D) -> void:
 	is_in_correct_area = false
+	

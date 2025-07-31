@@ -44,7 +44,7 @@ script = ExtResource("1_5c801")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_1amv2")
 animation = &"walk"
-frame_progress = 0.920521
+frame_progress = 0.457678
 
 [node name="main_character_collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1f3wm")
