@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6a3l3uualvhw"]
 
-[ext_resource type="Script" uid="uid://bhbrgy3nh0gvq" path="res://dialog_player.gd" id="1_wc4ro"]
+[ext_resource type="Script" uid="uid://bhbrgy3nh0gvq" path="res://Scripts/dialog_player.gd" id="1_wc4ro"]
 [ext_resource type="Texture2D" uid="uid://dd1nejt86s7so" path="res://Assets/DialogBackground1.png" id="2_g2ola"]
 [ext_resource type="FontFile" uid="uid://dou6ug2n223n6" path="res://Assets/fonts/happy-times-at-the-ikob.otf" id="3_lymtx"]
 
