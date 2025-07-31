@@ -26,16 +26,11 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("2_g2ola")
 
-[node name="TextLabel" type="Label" parent="."]
+[node name="TextLabel" type="Label" parent="Background"]
 texture_filter = 1
 offset_left = 96.0
-offset_top = 1100.0
+offset_top = 20.0
 offset_right = 1832.0
-offset_bottom = 1452.0
+offset_bottom = 372.0
 label_settings = SubResource("LabelSettings_fwmsl")
 autowrap_mode = 3
-
-[node name="ClickDelay" type="Timer" parent="."]
-wait_time = 0.2
-
-[connection signal="timeout" from="ClickDelay" to="." method="_on_click_delay_timeout"]

@@ -8,16 +8,15 @@ extends Area2D
 @onready var collision = $Collision
 
 var is_hovered = false
-var safe_to_send_dialogue_signal = true
 
 func _ready():
 	sprite.texture = image_base
 	SignalBus.current_dialog_finished.connect(saftey_switcher)
 
 func _input(event: InputEvent) -> void:
-	if is_hovered and event.is_action_pressed("Left_click") and safe_to_send_dialogue_signal:
+	if is_hovered and event.is_action_pressed("Left_click") and Globals.safe_to_send_dialog_signal:
+		Globals.safe_to_send_dialog_signal = false
 		SignalBus.emit_signal("start_move", self, object_name)
-		safe_to_send_dialogue_signal = false
 
 func _process(delta: float) -> void:
 	if is_hovered == true:
@@ -32,4 +31,5 @@ func _on_mouse_exited() -> void:
 	is_hovered = false
 
 func saftey_switcher():
-	safe_to_send_dialogue_signal = true
+	print("switched")
+	Globals.safe_to_send_dialog_signal = true

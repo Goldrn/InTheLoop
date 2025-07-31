@@ -39,10 +39,11 @@ func  _process(delta: float) -> void:
 		sprite.play("walk")
 
 func set_target_pos(area, text_key):
-	target_area = area
-	target_area_key = text_key
-	target_pos = area.position
-	should_continue_dialogue = true
+	if !Globals.in_progress:
+		target_area = area
+		target_area_key = text_key
+		target_pos = area.position
+		should_continue_dialogue = true
 
 func _on_dialogue_area_area_entered(area: Area2D) -> void:
 	if target_area == area:
