@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://vy4amqec7m6v"]
+
+[ext_resource type="Script" uid="uid://5yjno0b6hwue" path="res://Scripts/interactable_object.gd" id="1_ly0k4"]
+
+[node name="Interatable_object" type="Area2D"]
+process_mode = 3
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ly0k4")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

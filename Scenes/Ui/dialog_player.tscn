@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6a3l3uualvhw"]
+
+[ext_resource type="Script" uid="uid://bhbrgy3nh0gvq" path="res://dialog_player.gd" id="1_wc4ro"]
+[ext_resource type="Texture2D" uid="uid://dd1nejt86s7so" path="res://Assets/DialogBackground1.png" id="2_g2ola"]
+[ext_resource type="FontFile" uid="uid://dou6ug2n223n6" path="res://Assets/fonts/happy-times-at-the-ikob.otf" id="3_lymtx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fwmsl"]
+line_spacing = -1.0
+font = ExtResource("3_lymtx")
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+
+[node name="DialogPlayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_wc4ro")
+scene_text_file = "<null>"
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_g2ola")
+
+[node name="TextLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 96.0
+offset_top = 1100.0
+offset_right = 1832.0
+offset_bottom = 1452.0
+label_settings = SubResource("LabelSettings_fwmsl")
+autowrap_mode = 3
+
+[node name="ClickDelay" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="timeout" from="ClickDelay" to="." method="_on_click_delay_timeout"]
