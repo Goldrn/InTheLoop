@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://nncvpyhut5o6"]
+
+[ext_resource type="PackedScene" uid="uid://cgh2xoiinlgxr" path="res://Scenes/Re-usable/main_character.tscn" id="1_y4iys"]
+
+[node name="Break Room Floor 1" type="Node2D"]
+
+[node name="Main_Character" parent="." instance=ExtResource("1_y4iys")]
+position = Vector2(912, 448)

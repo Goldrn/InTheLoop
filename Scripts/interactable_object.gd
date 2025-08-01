@@ -3,6 +3,8 @@ extends Area2D
 @export var object_name = ""
 @export var image_base: Texture
 @export var image_hovered: Texture
+@export var portrait_left: Texture
+@export var portrait_right: Texture
 
 @onready var sprite = $Sprite
 @onready var collision = $Collision
@@ -16,7 +18,7 @@ func _ready():
 func _input(event: InputEvent) -> void:
 	if is_hovered and event.is_action_pressed("Left_click") and Globals.safe_to_send_dialog_signal:
 		Globals.safe_to_send_dialog_signal = false
-		SignalBus.emit_signal("start_move", self, object_name)
+		SignalBus.emit_signal("start_move", self, object_name, portrait_left, portrait_right)
 
 func _process(delta: float) -> void:
 	if is_hovered == true:

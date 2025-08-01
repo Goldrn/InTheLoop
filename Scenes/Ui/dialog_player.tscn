@@ -43,6 +43,7 @@ autowrap_mode = 3
 layer = 5
 
 [node name="portraits modulator" type="CanvasModulate" parent="portraits"]
+z_index = 5
 color = Color(1, 1, 1, 0)
 
 [node name="portrait left" type="TextureRect" parent="portraits/portraits modulator"]
@@ -60,3 +61,11 @@ offset_right = 2632.0
 offset_bottom = 1336.0
 texture = ExtResource("4_uucw4")
 flip_h = true
+
+[node name="grey_overlay" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="gray_rectangle" type="ColorRect" parent="grey_overlay"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.466667)

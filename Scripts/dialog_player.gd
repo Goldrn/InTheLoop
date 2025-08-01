@@ -14,6 +14,9 @@ var portraits_tween: Tween
 @onready var text_label = $Background/TextLabel
 @onready var portraits = $portraits
 @onready var portraits_modulator = $"portraits/portraits modulator"
+@onready var portrait_left_visualizer = $"portraits/portraits modulator/portrait left"
+@onready var portrait_right_visualizer = $"portraits/portraits modulator/portrait right"
+@onready var grey_overlay = $grey_overlay
 
 func _ready():
 	background.visible = false
@@ -55,19 +58,23 @@ func finish():
 	pull_tween.tween_property(background, "position", Vector2(0, 1400), 0.5).set_trans(Tween.TRANS_SPRING)
 	#pull_tween.parallel().tween_property(text_label, "position", Vector2(96, 1440), 0.5).set_trans(Tween.TRANS_SPRING)
 	await pull_tween.finished
+	grey_overlay.visible = false
 	Globals.in_progress = false
 	text_label.text = ""
 	background.visible = false
 	SignalBus.emit_signal("current_dialog_finished")
 	get_tree().paused = false
 
-func on_display_dialog(text_key):
+func on_display_dialog(text_key, portrait_left, portrait_right):
 	if Globals.in_progress:
 		next_line()
 	else:
 		get_tree().paused = true
 		background.visible = true
+		portrait_left_visualizer.texture = portrait_left
+		portrait_right_visualizer.texture = portrait_right
 		Globals.in_progress = true
+		grey_overlay.visible = true
 		if pull_tween != null and pull_tween.is_running():
 			await pull_tween.finished
 		pull_tween = create_tween()

@@ -1,0 +1,20 @@
+{
+    "test_email": {"sender":"test_boss@fucko.gov", 
+                   "recipients":"me@fucko.gov, le_troll@fucko.gov",
+                   "subject":"wee woo", 
+                   "body":"hi op, we are thinking about killing you, be prepared :)",
+                   "replys": [{"sender":"le_troll@fucko.gov", "body":"YOU HAVE BEEN TROLLED", "when":"test_event"}],
+                   "when": "Immediate"},
+    "test_email_two": {"sender":"test_boss@fucko.gov",
+                       "recipients":"everyone@fucko.gov",
+                       "subject":"disregard previous email", 
+                       "body":"I HAVE BEEN HAXORED, PLEASE CAUTION THYSEVLES, PREPARE FOR BATTLE",
+                       "replys": [{"sender":"le_troll@fucko.gov", "body":"NOOOOO, MY PLANS HAVE BEEN FOILED", "when":"Immediate"}],
+                       "when":"test_event2"},
+    "test_email_three": {"sender":"cool_guy@fucko.gov", 
+                         "recipients":"me@fucko.gov",
+                         "subject":"HI", 
+                         "body":"hi op, how it go, see you at lunch",
+                         "replys": [],
+                         "when":"Immediate"}
+}
