@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://v5basnj46bwn"]
+
+[ext_resource type="PackedScene" uid="uid://vy4amqec7m6v" path="res://Scenes/Re-usable/interactable_object.tscn" id="1_mmc74"]
+[ext_resource type="Texture2D" uid="uid://br5ymdh3fdk75" path="res://Assets/cubicle.png" id="2_cr2o8"]
+[ext_resource type="Texture2D" uid="uid://b0pnh4sh7l7bd" path="res://Assets/cubicle_hilight.png" id="3_fpuhj"]
+[ext_resource type="PackedScene" uid="uid://c6a3l3uualvhw" path="res://Scenes/Ui/dialog_player.tscn" id="4_1cxsl"]
+[ext_resource type="PackedScene" uid="uid://cgh2xoiinlgxr" path="res://Scenes/Re-usable/main_character.tscn" id="5_cr2o8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2hn4"]
+size = Vector2(448, 352)
+
+[node name="Cubicles Floor 1" type="Node2D"]
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="Interatable_object" parent="Objects" instance=ExtResource("1_mmc74")]
+position = Vector2(224, 488)
+object_name = "test"
+image_base = ExtResource("2_cr2o8")
+image_hovered = ExtResource("3_fpuhj")
+metadata/_edit_group_ = true
+
+[node name="Sprite" parent="Objects/Interatable_object" index="0"]
+position = Vector2(-2.64645e-05, 6.61612e-06)
+scale = Vector2(0.343558, 0.340755)
+texture = ExtResource("2_cr2o8")
+
+[node name="Collision" parent="Objects/Interatable_object" index="1"]
+shape = SubResource("RectangleShape2D_s2hn4")
+
+[node name="Interatable_object2" parent="Objects" instance=ExtResource("1_mmc74")]
+position = Vector2(720, 488)
+object_name = "test"
+image_base = ExtResource("2_cr2o8")
+image_hovered = ExtResource("3_fpuhj")
+metadata/_edit_group_ = true
+
+[node name="Sprite" parent="Objects/Interatable_object2" index="0"]
+position = Vector2(-2.64645e-05, 6.61612e-06)
+scale = Vector2(0.343558, 0.340755)
+texture = ExtResource("2_cr2o8")
+
+[node name="Collision" parent="Objects/Interatable_object2" index="1"]
+shape = SubResource("RectangleShape2D_s2hn4")
+
+[node name="Interatable_object3" parent="Objects" instance=ExtResource("1_mmc74")]
+position = Vector2(1208, 488)
+object_name = "test"
+image_base = ExtResource("2_cr2o8")
+image_hovered = ExtResource("3_fpuhj")
+metadata/_edit_group_ = true
+
+[node name="Sprite" parent="Objects/Interatable_object3" index="0"]
+position = Vector2(-2.64645e-05, 6.61612e-06)
+scale = Vector2(0.343558, 0.340755)
+texture = ExtResource("2_cr2o8")
+
+[node name="Collision" parent="Objects/Interatable_object3" index="1"]
+shape = SubResource("RectangleShape2D_s2hn4")
+
+[node name="Interatable_object4" parent="Objects" instance=ExtResource("1_mmc74")]
+position = Vector2(1696, 488)
+object_name = "test"
+image_base = ExtResource("2_cr2o8")
+image_hovered = ExtResource("3_fpuhj")
+metadata/_edit_group_ = true
+
+[node name="Sprite" parent="Objects/Interatable_object4" index="0"]
+position = Vector2(-2.64645e-05, 6.61612e-06)
+scale = Vector2(0.343558, 0.340755)
+texture = ExtResource("2_cr2o8")
+
+[node name="Collision" parent="Objects/Interatable_object4" index="1"]
+shape = SubResource("RectangleShape2D_s2hn4")
+
+[node name="DialogPlayer" parent="." instance=ExtResource("4_1cxsl")]
+
+[node name="Main_Character" parent="." instance=ExtResource("5_cr2o8")]
+z_index = 10
+position = Vector2(1448, 472)
+
+[editable path="Objects/Interatable_object"]
+[editable path="Objects/Interatable_object2"]
+[editable path="Objects/Interatable_object3"]
+[editable path="Objects/Interatable_object4"]

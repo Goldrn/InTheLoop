@@ -37,6 +37,10 @@ func  _process(delta: float) -> void:
 	else :
 		self.position.x = self.position.move_toward(target_pos, move_speed * delta).x
 		sprite.play("walk")
+		if dialogue_area.overlaps_area(target_area):
+			is_in_correct_area = true
+		else:
+			is_in_correct_area = false
 
 func set_target_pos(area, text_key):
 	if !Globals.in_progress:
@@ -44,11 +48,16 @@ func set_target_pos(area, text_key):
 		target_area_key = text_key
 		target_pos = area.position
 		should_continue_dialogue = true
+		if self.position.x > target_pos.x - deadzone and self.position.x > target_pos.x + deadzone:
+			sprite.flip_h = false
+		elif self.position.x < target_pos.x - deadzone and self.position.x < target_pos.x + deadzone:
+			sprite.flip_h = true
+		else: 
+			pass
 
 func _on_dialogue_area_area_entered(area: Area2D) -> void:
 	if target_area == area:
 		is_in_correct_area = true
-		
-func _on_dialogue_area_area_exited(area: Area2D) -> void:
-	is_in_correct_area = false
+
+	
 	

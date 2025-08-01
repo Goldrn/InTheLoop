@@ -8,9 +8,12 @@ var can_click = false
 
 var fade_in_tween: Tween
 var pull_tween: Tween
+var portraits_tween: Tween
 
 @onready var background = $Background
 @onready var text_label = $Background/TextLabel
+@onready var portraits = $portraits
+@onready var portraits_modulator = $"portraits/portraits modulator"
 
 func _ready():
 	background.visible = false
@@ -42,6 +45,10 @@ func next_line():
 
 func finish():
 	can_click = false
+	if portraits_tween != null and portraits_tween.is_running():
+			await portraits_tween.finished
+	portraits_tween = create_tween()
+	portraits_tween.tween_property(portraits_modulator, "color", Globals.transparent, 0.25)
 	if pull_tween != null and pull_tween.is_running():
 		await pull_tween.finished
 	pull_tween = create_tween()
@@ -67,6 +74,10 @@ func on_display_dialog(text_key):
 		pull_tween.tween_property(background, "position", Vector2(0, 700), 0.5).set_trans(Tween.TRANS_SPRING)
 		#pull_tween.parallel().tween_property(text_label, "position", Vector2(96, 720), 0.5).set_trans(Tween.TRANS_SPRING)
 		await pull_tween.finished
+		if portraits_tween != null and portraits_tween.is_running():
+			await portraits_tween.finished
+		portraits_tween = create_tween()
+		portraits_tween.tween_property(portraits_modulator, "color", Globals.white, 0.25)
 		selected_text = scene_text[text_key].duplicate()
 		show_text()
 		

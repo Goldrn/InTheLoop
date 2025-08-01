@@ -31,5 +31,4 @@ func _on_mouse_exited() -> void:
 	is_hovered = false
 
 func saftey_switcher():
-	print("switched")
 	Globals.safe_to_send_dialog_signal = true

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6a3l3uualvhw"]
+[gd_scene load_steps=6 format=3 uid="uid://c6a3l3uualvhw"]
 
 [ext_resource type="Script" uid="uid://bhbrgy3nh0gvq" path="res://Scripts/dialog_player.gd" id="1_wc4ro"]
 [ext_resource type="Texture2D" uid="uid://dd1nejt86s7so" path="res://Assets/DialogBackground1.png" id="2_g2ola"]
 [ext_resource type="FontFile" uid="uid://dou6ug2n223n6" path="res://Assets/fonts/happy-times-at-the-ikob.otf" id="3_lymtx"]
+[ext_resource type="Texture2D" uid="uid://cy5qupss2qg4n" path="res://Assets/player/portrait.png" id="4_uucw4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fwmsl"]
 line_spacing = -1.0
@@ -12,10 +13,12 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="DialogPlayer" type="CanvasLayer"]
 process_mode = 3
+layer = 10
 script = ExtResource("1_wc4ro")
-scene_text_file = "<null>"
+scene_text_file = "res://Assets/json/dialog.json"
 
 [node name="Background" type="TextureRect" parent="."]
+z_index = 15
 texture_filter = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -28,9 +31,32 @@ texture = ExtResource("2_g2ola")
 
 [node name="TextLabel" type="Label" parent="Background"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 96.0
 offset_top = 20.0
 offset_right = 1832.0
 offset_bottom = 372.0
 label_settings = SubResource("LabelSettings_fwmsl")
 autowrap_mode = 3
+
+[node name="portraits" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="portraits modulator" type="CanvasModulate" parent="portraits"]
+color = Color(1, 1, 1, 0)
+
+[node name="portrait left" type="TextureRect" parent="portraits/portraits modulator"]
+z_index = 13
+offset_left = -712.0
+offset_top = 264.0
+offset_right = 1208.0
+offset_bottom = 1344.0
+texture = ExtResource("4_uucw4")
+
+[node name="portrait right" type="TextureRect" parent="portraits/portraits modulator"]
+offset_left = 712.0
+offset_top = 256.0
+offset_right = 2632.0
+offset_bottom = 1336.0
+texture = ExtResource("4_uucw4")
+flip_h = true
