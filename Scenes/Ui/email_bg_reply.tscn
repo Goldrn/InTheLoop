@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcsyv5l82kuxg"]
+
+[ext_resource type="Texture2D" uid="uid://fiywp8orur80" path="res://Assets/email_body_reply_bg.png" id="1_vn64k"]
+[ext_resource type="FontFile" uid="uid://dou6ug2n223n6" path="res://Assets/fonts/happy-times-at-the-ikob.otf" id="2_utem6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dri3a"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0lbd8"]
+font = ExtResource("2_utem6")
+font_size = 35
+font_color = Color(0.277528, 0.277528, 0.277528, 1)
+
+[node name="email_bg_reply" type="TextureRect"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vn64k")
+
+[node name="Sender" type="Label" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 24.0
+offset_right = 1520.0
+offset_bottom = 64.0
+label_settings = SubResource("LabelSettings_dri3a")
+vertical_alignment = 1
+
+[node name="Body" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 104.0
+offset_right = 1520.0
+offset_bottom = 688.0
+label_settings = SubResource("LabelSettings_dri3a")
+
+[node name="sender_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 24.0
+offset_right = 255.0
+offset_bottom = 80.0
+text = "Sender:"
+label_settings = SubResource("LabelSettings_0lbd8")

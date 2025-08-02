@@ -28,6 +28,7 @@ func _ready() -> void:
 	view_to_world = self.get_canvas_transform().affine_inverse()
 	target_pos = self.position
 	y_level = self.position.y
+	SignalBus.emit_signal("current_dialog_finished")
 	SignalBus.start_move.connect(set_target_pos)
 	SignalBus.switch_scene.connect(scene_setter)
 	
@@ -36,7 +37,7 @@ func _ready() -> void:
 func  _process(delta: float) -> void:
 	if self.position.x > target_pos.x - deadzone and self.position.x < target_pos.x + deadzone:
 		sprite.play("default")
-		if is_in_correct_area and should_continue_dialogue:
+		if is_in_correct_area and should_continue_dialogue and !should_switch_scene:
 			SignalBus.emit_signal("display_dialog", target_area_key, portrait_left_passer, portrait_right_passer)
 			should_continue_dialogue = false
 			target_area = null
@@ -71,6 +72,7 @@ func scene_setter(scene, area):
 		target_area = area
 		next_scene_holder = scene
 		target_pos = area.position
+		should_continue_dialogue = true
 		should_switch_scene = true
 		player_flipper()
 		

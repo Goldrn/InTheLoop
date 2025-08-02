@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2hl34yy2yhqt"]
+
+[ext_resource type="Script" uid="uid://dmnx0s7ts8gw2" path="res://Scripts/email_preview.gd" id="1_gral6"]
+[ext_resource type="FontFile" uid="uid://dou6ug2n223n6" path="res://Assets/fonts/happy-times-at-the-ikob.otf" id="1_m0eir"]
+[ext_resource type="Texture2D" uid="uid://xm2fhgu4aokl" path="res://Assets/inboxpreview.png" id="2_m0eir"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m0eir"]
+font = ExtResource("1_m0eir")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="Email Preview" type="TextureRect"]
+texture = ExtResource("2_m0eir")
+script = ExtResource("1_gral6")
+
+[node name="email preview text" type="Label" parent="."]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = -1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 368.0
+offset_bottom = 152.0
+label_settings = SubResource("LabelSettings_m0eir")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

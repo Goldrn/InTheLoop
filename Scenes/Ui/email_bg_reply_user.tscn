@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://btiim8oyh8v2b"]
+
+[ext_resource type="Texture2D" uid="uid://cjvatq5bh015w" path="res://Assets/email_body_reply_user_bg.png" id="1_le2sk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dri3a"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="email_bg_reply_user" type="TextureRect"]
+texture_filter = 1
+offset_right = 1536.0
+offset_bottom = 606.0
+focus_mode = 1
+texture = ExtResource("1_le2sk")
+
+[node name="Body" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 1488.0
+offset_bottom = 688.0
+label_settings = SubResource("LabelSettings_dri3a")

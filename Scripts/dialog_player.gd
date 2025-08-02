@@ -85,7 +85,11 @@ func on_display_dialog(text_key, portrait_left, portrait_right):
 			await portraits_tween.finished
 		portraits_tween = create_tween()
 		portraits_tween.tween_property(portraits_modulator, "color", Globals.white, 0.25)
-		selected_text = scene_text[text_key].duplicate()
+		selected_text = scene_text[text_key]["dialogue"].duplicate()
+		for word in scene_text[text_key]["goodWords"]:
+			Globals.known_words.set(word, "good")
+		for word in scene_text[text_key]["badWords"]:
+			Globals.known_words.set(word, "bad")
 		show_text()
 		
 		

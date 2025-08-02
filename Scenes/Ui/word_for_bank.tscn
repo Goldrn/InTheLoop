@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://blqpphot63qjf"]
+
+[ext_resource type="Texture2D" uid="uid://bgyxcoiir7je5" path="res://Assets/word_bg.png" id="1_1bmfd"]
+[ext_resource type="Texture2D" uid="uid://b15gkb2wkp117" path="res://Assets/word_bg_hilight.png" id="2_6kw1r"]
+[ext_resource type="FontFile" uid="uid://dou6ug2n223n6" path="res://Assets/fonts/happy-times-at-the-ikob.otf" id="2_vk8li"]
+[ext_resource type="Texture2D" uid="uid://tfiruhoiyywu" path="res://Assets/word_bg_pressed.png" id="2_x4msy"]
+[ext_resource type="Script" uid="uid://bbiak2ixpogvr" path="res://Scenes/Ui/word_for_bank.gd" id="4_x4msy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bmfd"]
+font = ExtResource("2_vk8li")
+font_size = 38
+font_color = Color(0, 0, 0, 1)
+
+[node name="Word for bank" type="TextureButton"]
+texture_filter = 1
+offset_right = 256.0
+offset_bottom = 88.0
+texture_normal = ExtResource("1_1bmfd")
+texture_pressed = ExtResource("2_x4msy")
+texture_hover = ExtResource("2_6kw1r")
+stretch_mode = 0
+script = ExtResource("4_x4msy")
+
+[node name="button_text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.094
+anchor_top = 0.182
+anchor_right = -0.094
+anchor_bottom = 0.182
+offset_left = 0.0640011
+offset_top = -0.0160007
+offset_right = 208.064
+offset_bottom = 38.984
+label_settings = SubResource("LabelSettings_1bmfd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

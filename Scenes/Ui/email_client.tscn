@@ -1,3 +1,67 @@
-[gd_scene format=3 uid="uid://bcwvkbfajkkfy"]
+[gd_scene load_steps=6 format=3 uid="uid://bcwvkbfajkkfy"]
+
+[ext_resource type="Script" uid="uid://d3wlfi25q46nu" path="res://Scripts/email_client.gd" id="1_w14cp"]
+[ext_resource type="Texture2D" uid="uid://bm4xpn1i7gd1d" path="res://Assets/email_client_bg.png" id="2_eu2di"]
+[ext_resource type="Texture2D" uid="uid://d0ecsx5bxt655" path="res://Assets/inboxlogo.png" id="2_f7mv5"]
+[ext_resource type="Texture2D" uid="uid://ew5jjfasm5wc" path="res://Assets/wordbankbackround.png" id="3_eu2di"]
+[ext_resource type="Theme" uid="uid://b6what3nbsnq1" path="res://Scenes/Ui/new_theme.tres" id="5_eu2di"]
 
 [node name="Email Client" type="CanvasLayer"]
+script = ExtResource("1_w14cp")
+emails_file = "res://Assets/json/emails.json"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_eu2di")
+
+[node name="inbox logo" type="TextureRect" parent="."]
+offset_right = 380.0
+offset_bottom = 170.0
+texture = ExtResource("2_f7mv5")
+
+[node name="word bank background" type="TextureRect" parent="."]
+offset_top = 704.0
+offset_right = 1920.0
+offset_bottom = 1084.0
+texture = ExtResource("3_eu2di")
+
+[node name="word bank" type="GridContainer" parent="word bank background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012
+anchor_top = 0.168
+anchor_right = 0.012
+anchor_bottom = 0.168
+offset_left = 0.959999
+offset_top = 0.159996
+offset_right = 1872.96
+offset_bottom = 288.16
+columns = 20
+
+[node name="email list scroller" type="ScrollContainer" parent="."]
+process_mode = 3
+offset_top = 168.0
+offset_right = 384.0
+offset_bottom = 704.0
+
+[node name="email list" type="VBoxContainer" parent="email list scroller"]
+layout_mode = 2
+
+[node name="email bodys scroller" type="ScrollContainer" parent="."]
+process_mode = 3
+texture_filter = 6
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1536.0
+offset_bottom = -365.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("5_eu2di")
+follow_focus = true
+
+[node name="email bodys" type="VBoxContainer" parent="email bodys scroller"]
+process_mode = 3
+layout_mode = 2

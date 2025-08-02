@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b6what3nbsnq1"]
+
+[ext_resource type="StyleBox" uid="uid://6a362w5deaqp" path="res://Scenes/Ui/new_style_box_texture.tres" id="1_122q6"]
+[ext_resource type="StyleBox" uid="uid://dybslamab0dqo" path="res://Scenes/Ui/new_style_box_texture_hilight.tres" id="2_122q6"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_122q6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u37w0"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+expand_margin_left = 3.0
+expand_margin_right = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgsfn"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[resource]
+default_base_scale = 2.0
+VScrollBar/icons/decrement = SubResource("ImageTexture_122q6")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_122q6")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_122q6")
+VScrollBar/icons/increment = SubResource("ImageTexture_122q6")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_122q6")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_122q6")
+VScrollBar/styles/grabber = ExtResource("1_122q6")
+VScrollBar/styles/grabber_highlight = ExtResource("2_122q6")
+VScrollBar/styles/grabber_pressed = ExtResource("2_122q6")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_u37w0")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_sgsfn")
